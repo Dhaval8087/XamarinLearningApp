@@ -116,6 +116,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomeSliderRenderer.cs" />
+    <Compile Include="Localization.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="app.config" />
@@ -123,6 +124,8 @@
     <None Include="Info.plist">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="PlatformInfo.cs" />
+    <Compile Include="PlatformSoundPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
