@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LearningApp.UserControls.CustomeEntry"
+             xmlns:local="clr-namespace:LearningApp.Extension">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="20" />
+    </Grid.ColumnDefinitions>
+    <Entry Grid.Column="0"  x:Name="entry" />
+    <local:RoundedButton Grid.Column="1" Text="X" BackgroundColor="Gray" TextColor="White" HeightRequest="20" WidthRequest="10" VerticalOptions="Center" Margin="-30,0,30,0" x:Name="cancelbtn">
+        <local:RoundedButton.Triggers>
+            <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference entry},Path=Text.Length}" Value="0">
+                <Setter Property="IsVisible" Value="False" />
+            </DataTrigger>
+
+        </local:RoundedButton.Triggers>
+    </local:RoundedButton>
+</Grid>

@@ -50,6 +50,7 @@
     <Compile Include="Extension\ElementSourceExtension.cs" />
     <Compile Include="Extension\EntryExtension.cs" />
     <Compile Include="Extension\PopupLayout.cs" />
+    <Compile Include="Extension\RoundedButton.cs" />
     <Compile Include="Extension\TranslateExtension.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -93,6 +94,9 @@
     <Compile Include="Services\CallWebService.cs" />
     <Compile Include="Uitility\AppConstant.cs" />
     <Compile Include="Uitility\LinqExtensions.cs" />
+    <Compile Include="UserControls\CustomeEntry.xaml.cs">
+      <DependentUpon>CustomeEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CallObjectsViewModel.cs" />
     <Compile Include="ViewModels\CreateObjectViewModel.cs" />
     <Compile Include="ViewModels\CredentialViewModel.cs" />
@@ -102,6 +106,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\PlatformSpecificViewModel.cs" />
     <Compile Include="ViewModels\ScrollingStackViewModel.cs" />
+    <Compile Include="ViewModels\TriggersViewModel.cs" />
     <Compile Include="ViewModels\XamlHarmonyViewModel.cs" />
     <Compile Include="ViewModels\XamlMarkupExtensionViewModel.cs" />
     <Compile Include="Views\AbsoluteLayoutPanel\AbsoluteLayoutBasic.xaml.cs">
@@ -166,6 +171,15 @@
     </Compile>
     <Compile Include="Views\ScrollingStack.xaml.cs">
       <DependentUpon>ScrollingStack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TriggersDemo\DataTriggers.xaml.cs">
+      <DependentUpon>DataTriggers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TriggersDemo\EventsTriggers.xaml.cs">
+      <DependentUpon>EventsTriggers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TriggersDemo\Triggers.xaml.cs">
+      <DependentUpon>Triggers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\XamlHarmonyViews\PassingArgument.xaml.cs">
       <DependentUpon>PassingArgument.xaml</DependentUpon>
@@ -448,6 +462,30 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AlertDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TriggersDemo\Triggers.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TriggersDemo\DataTriggers.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TriggersDemo\EventsTriggers.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserControls\CustomeEntry.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

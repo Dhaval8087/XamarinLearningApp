@@ -22,7 +22,8 @@
                     <Button Text="Rest Web Service" HeightRequest="60"  BackgroundColor="#FFEEDD" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="RestService" />
                     <Button Text="Absolute Layout" HeightRequest="60"  BackgroundColor="#FFDDEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="Absolutelayout" />
                     <Button Text="Interactive Interface" HeightRequest="60"  BackgroundColor="#DDFFEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="Interactiveinterface" />
-                    <Button Text="Alert Demo" HeightRequest="60"  BackgroundColor="#DDFFEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="alert" />
+                    <Button Text="Alert Demo" HeightRequest="60"  BackgroundColor="#DDEFEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="alert" />
+                    <Button Text="Triggers Demo" HeightRequest="60"  BackgroundColor="#EEDDEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="triggers" />
                 </StackLayout>
             </Frame>
         </StackLayout>

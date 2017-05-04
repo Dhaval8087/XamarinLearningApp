@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.TriggersDemo.Triggers">
+    <StackLayout Orientation="Vertical" x:Name="MainSt">
+        <Frame OutlineColor="Accent">
+            <Label Text="Triggers Demo!" 
+           VerticalOptions="Center" 
+           TextColor="Maroon"
+           HorizontalOptions="Center" FontSize="Large" />
+        </Frame>
+        <Frame OutlineColor="Accent">
+            <StackLayout Spacing="30" Padding="10" BackgroundColor="#fffff0">
+                <Button Text="Events Triggers" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand"   Command="{Binding TriggerCommand}" CommandParameter="event"/>
+
+                <Button Text="Data Triggers" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand" Command="{Binding TriggerCommand}" CommandParameter="data" />
+            </StackLayout>
+
+        </Frame>
+    </StackLayout>
+</ContentPage>

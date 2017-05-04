@@ -4,6 +4,7 @@ using LearningApp.Views;
 using LearningApp.Views.AbsoluteLayoutPanel;
 using LearningApp.Views.IntractiveInterface;
 using LearningApp.Views.RestService;
+using LearningApp.Views.TriggersDemo;
 using LearningApp.Views.XamlHarmonyViews;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,9 @@ namespace LearningApp.ViewModels
                     break;
                 case "alert":
                     Navigation.PushAsync(new AlertDemo());
+                    break;
+                case "triggers":
+                    Navigation.PushAsync(new Triggers());
                     break;
                 default:
                     break;
