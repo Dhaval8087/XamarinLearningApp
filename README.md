@@ -8,7 +8,7 @@ You just need to clone or Download the zip file and build the soultion.
 
 ## Demo
 
-![Demo](https://www.dropbox.com/s/c4n75rv2manc2a1/Recording_2.flv?dl=0)
+[![ScreenShot]([Demo])](https://www.dropbox.com/s/c4n75rv2manc2a1/Recording_2.flv?dl=0)
 
 ### Prerequisites
 
