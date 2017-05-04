@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.AbsoluteLayoutPanel.LayoutChapter">
+    <StackLayout Padding="20" Spacing="20" BackgroundColor="#99CC99" x:Name="ST">
+        <Frame OutlineColor="Accent">
+            <Label Text="Absolute Layout Demo!" 
+           VerticalOptions="Center" 
+           TextColor="Maroon"
+           HorizontalOptions="Center" FontSize="Large" />
+        </Frame>
+        <Frame OutlineColor="Accent">
+            <StackLayout Spacing="30" Padding="10" BackgroundColor="#fffff0">
+                <Button Text="Absolute Layout and Attached Property"  FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand"  Command="{Binding AbsoluteCommand}" CommandParameter="layoutattached"/>
+                <Button Text="Absolute Layout with Flags" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand" Command="{Binding AbsoluteCommand}" CommandParameter="layoutflags" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.IntractiveInterface.InteractiveChapter">
+    <StackLayout Padding="20" Spacing="20" BackgroundColor="#99CC99" x:Name="ST">
+        <Frame OutlineColor="Accent">
+            <Label Text="Interactive Interface Demo!" 
+           VerticalOptions="Center" 
+           TextColor="Maroon"
+           HorizontalOptions="Center" FontSize="Large" />
+        </Frame>
+        <Frame OutlineColor="Accent">
+            <StackLayout Spacing="30" Padding="10" BackgroundColor="#fffff0">
+                <Button Text="Slider Demo"  FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand"  Command="{Binding Interactive}" CommandParameter="slider"/>
+                <Button Text="Choosing the keyboard" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand" Command="{Binding Interactive}" CommandParameter="choosingkeyboard" />
+                <Button Text="Editor" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand" Command="{Binding Interactive}" CommandParameter="editor" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

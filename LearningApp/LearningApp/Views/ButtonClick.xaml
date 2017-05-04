@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.ButtonClick" Title="Button Click Demo">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        
+        <StackLayout Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" MinimumHeightRequest="500">
+            <BoxView BackgroundColor="Green" HorizontalOptions="Center" VerticalOptions="Center" x:Name="greenBox"/>
+        </StackLayout>
+        <Button Text="LEFT" BackgroundColor="#9999CC" Grid.Row="1" Grid.Column="0" x:Name="OnLeft" Clicked="OnLeft_Clicked"/>
+        <Button Text="RIGHT" BackgroundColor="#FFFFCC" Grid.Row="1" Grid.Column="1" x:Name="OnRight" Clicked="OnRight_Clicked"/>
+        <Button Text="TOP" BackgroundColor="#99CC99" Grid.Row="2" Grid.Column="0" x:Name="OnTop" Clicked="OnTop_Clicked"/>
+        <Button Text="DOWN" BackgroundColor="#CCCC99" Grid.Row="2" Grid.Column="1" x:Name="OnDown" Clicked="OnDown_Clicked"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.PlatformSpecific"
+             Title="PlatformSpecific">
+  <ScrollView>
+        <StackLayout Padding="10">
+            <Frame VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Device Information" TextColor="Blue" FontSize="Large" />
+            </Frame>
+            
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Model : " Grid.Row="0" Grid.Column="0" TextColor="Red" FontSize="Medium"/>
+                    <Label  TextColor="Red" FontSize="Large" Text="{Binding ModelName}" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Version : " Grid.Row="1" Grid.Column="0" TextColor="Red" FontSize="Medium"/>
+                    <Label  TextColor="Red" FontSize="Large" Text="{Binding VersionName}" Grid.Row="1" Grid.Column="1"/>
+                    <Button BackgroundColor="#9999CC" Text="{Binding ButtonText}" Command="{Binding PlaySound}" Grid.Column="0" Grid.Row="2" />
+                    
+                </Grid>
+            </StackLayout>
+            
+        </StackLayout>
+  </ScrollView>
+</ContentPage>

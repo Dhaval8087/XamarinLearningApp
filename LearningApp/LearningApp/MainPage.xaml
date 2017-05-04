@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LearningApp"
+             x:Class="LearningApp.MainPage" Title="Xamarin Learning" BackgroundColor="Gray">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Frame OutlineColor="Accent">
+                <Label Text="Welcome to Xamarin Learning App!" 
+           VerticalOptions="Center" 
+           TextColor="Maroon"
+           HorizontalOptions="Center" FontSize="Large" />
+            </Frame>
+            <Frame OutlineColor="Accent">
+                <StackLayout Spacing="30" Padding="10" BackgroundColor="#fffff0">
+                    <Button Text="Scrolling the stack" HeightRequest="60"  BackgroundColor="#097054" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="ScrollingTab" />
+                    <Button Text="Button Click" HeightRequest="60" BackgroundColor="#FFDE00" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="ButtonClick" />
+                    <Button Text="Plateform Specific" HeightRequest="60"  BackgroundColor="#9999CC" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="PlateformSpecific" />
+                    <Button Text="Code and Xaml in Harmony" HeightRequest="60"  BackgroundColor="#CCCC99" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="XAMLHarmony" />
+                    <Button Text="XAML Markup Entension" HeightRequest="60"  BackgroundColor="#FFFFCC" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="XAMLMarkup" />
+                    <Button Text="Bindable Infrastructure" HeightRequest="60"  BackgroundColor="#FFEFCC" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="Bindable" />
+                    <Button Text="Rest Web Service" HeightRequest="60"  BackgroundColor="#FFEEDD" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="RestService" />
+                    <Button Text="Absolute Layout" HeightRequest="60"  BackgroundColor="#FFDDEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="Absolutelayout" />
+                    <Button Text="Interactive Interface" HeightRequest="60"  BackgroundColor="#DDFFEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="Interactiveinterface" />
+                    <Button Text="Alert Demo" HeightRequest="60"  BackgroundColor="#DDFFEE" FontSize="Medium" HorizontalOptions="FillAndExpand" Command="{Binding ScrollingTab,Mode=TwoWay}" CommandParameter="alert" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

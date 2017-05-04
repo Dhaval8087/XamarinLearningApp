@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.XamlHarmony.PassingArgument">
+    <StackLayout Orientation="Vertical" x:Name="MainSt">
+        
+        <StackLayout.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                  iOS="0, 20, 0, 0"
+                  Android="5, 10"
+                  WinPhone="10" />
+            
+        </StackLayout.Margin>
+
+        <Label x:Name="timeLabel"  HorizontalOptions="Center" VerticalOptions="EndAndExpand" >
+            <Label.FontSize>
+                <OnIdiom x:TypeArguments="x:Double" Phone="20" Tablet="30" />
+            </Label.FontSize>
+        </Label>
+        <Label x:Name="dateLabel" HorizontalOptions="Center" VerticalOptions="StartAndExpand" />
+    </StackLayout>
+</ContentPage>

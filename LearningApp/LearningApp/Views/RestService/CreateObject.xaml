@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.RestService.CreateObject"
+             xmlns:local="clr-namespace:LearningApp.Views"
+             xmlns:b="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
+             Title="Add Timesheet Entry">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+  
+    <StackLayout Orientation="Vertical">
+        <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Date" FontSize="Medium" />
+        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="#c1eaf6" Margin="10,0,0,0" Text="{Binding SelectedEntryDate}">
+            <b:Interaction.Behaviors>
+                <b:BehaviorCollection>
+                    <b:EventToCommand EventName="Focused" Command="{Binding TimesheetEntryDateFocus}" CommandParameter="Date"/>
+                </b:BehaviorCollection>
+            </b:Interaction.Behaviors>
+
+        </Entry>
+        <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Pay Code" FontSize="Medium" />
+        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="#c1eaf6" Margin="10,0,0,0" Text="{Binding SelectedEntryPaycode}">
+            <b:Interaction.Behaviors>
+                <b:BehaviorCollection>
+                    <b:EventToCommand EventName="Focused" Command="{Binding TimesheetEntryDateFocus}" CommandParameter="Paycode"/>
+                </b:BehaviorCollection>
+            </b:Interaction.Behaviors>
+
+        </Entry>
+        <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Track Code" FontSize="Medium" />
+        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="#c1eaf6" Margin="10,0,0,0" Text="{Binding SelectedEntryTrackcode}">
+            <b:Interaction.Behaviors>
+                <b:BehaviorCollection>
+                    <b:EventToCommand EventName="Focused" Command="{Binding TimesheetEntryDateFocus}" CommandParameter="Trackcode"/>
+                </b:BehaviorCollection>
+            </b:Interaction.Behaviors>
+
+        </Entry>
+        <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Units" FontSize="Medium" />
+        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="#c1eaf6" Margin="10,0,0,0" Text="{Binding Units}" />
+        
+    </StackLayout>
+        <Button Grid.Row="1" HorizontalOptions="FillAndExpand" BackgroundColor="#d25903" Command="{Binding SaveTimesheet}" TextColor="White" FontAttributes="Bold"  Text="Save" />
+    </Grid>
+</ContentPage>

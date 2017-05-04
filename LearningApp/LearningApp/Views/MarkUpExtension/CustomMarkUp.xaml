@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.MarkUpExtension.CustomMarkUp"
+             xmlns:i18n="clr-namespace:LearningApp.Extension;assembly=LearningApp"
+             Title="Custome Markup Demo">
+    <StackLayout Padding="20" Spacing="30">
+        <Label Text="{i18n:Translate Name}" FontSize="Large" TextColor="Red"/>
+        <Entry Text="" x:Name="nameEntry" Placeholder="{i18n:Translate TaskName}" />
+
+        <Label Text="{i18n:Translate Notes}" FontSize="Large" TextColor="Red" />
+        <Entry Text="{Binding Path=Notes}" x:Name="notesEntry" />
+
+    </StackLayout>
+</ContentPage>

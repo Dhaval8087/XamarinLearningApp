@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.RestService.ObjectDetails"
+             xmlns:b="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
+             xmlns:DateConverter="clr-namespace:LearningApp.Converter;assembly=LearningApp"
+             xmlns:util="clr-namespace:LearningApp.Extension;assembly=LearningApp"
+             x:Name="objectDetail"
+             Title="Timesheet Detail Page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <DateConverter:DateFormatConverter x:Key="DateFormatConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Grid.Row="0" >
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Division" FontSize="Medium" FontAttributes="Bold"/>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding TimesheetDetails.ClientName,Mode=TwoWay}" FontSize="Medium" />
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Resource Name" FontSize="Medium" FontAttributes="Bold"/>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding SelectedTimesheet.ResourceName,Mode=TwoWay}" FontSize="Medium" />
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Project Name" FontSize="Medium" FontAttributes="Bold"/>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding SelectedTimesheet.ProjectName,Mode=TwoWay}" FontSize="Medium" />
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Timesheet Ending Date" FontSize="Medium" FontAttributes="Bold"/>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding SelectedTimesheet.PeriodEnding,Mode=TwoWay}" FontSize="Medium" />
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="PO Number" FontSize="Medium" FontAttributes="Bold"/>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding TimesheetDetails.ProjectPONumber,Mode=TwoWay}" FontSize="Medium" />
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Approval Manager" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry HorizontalOptions="FillAndExpand" BackgroundColor="#c1eaf6" Margin="10,0,0,0" Text="{Binding TimesheetDetails.ApprovalManager}">
+                    <b:Interaction.Behaviors>
+                        <b:BehaviorCollection>
+                            <b:EventToCommand EventName="Focused" Command="{Binding ApprovalManageFocused}" />
+                        </b:BehaviorCollection>
+                    </b:Interaction.Behaviors>
+
+                </Entry>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="Timesheet ID" FontSize="Medium" FontAttributes="Bold"/>
+                <Label HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding SelectedTimesheet.TimesheetID,Mode=TwoWay}" FontSize="Medium" />
+                <BoxView Color="#c1eaf6" HeightRequest="1" WidthRequest="1" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="10,20,0,0">
+                    <Label Text="Timesheet Entries" HorizontalOptions="Start" FontSize="Medium" TextColor="#01446b" FontAttributes="Bold" />
+                    <Button Text="+" HorizontalOptions="EndAndExpand" BackgroundColor="#d25903" HeightRequest="55" WidthRequest="55"  TextColor="White" FontAttributes="Bold" Command="{Binding AddTimesheet}" />
+                </StackLayout>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="200" />
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="0" BackgroundColor="{DynamicResource DateColor}">
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TapCommand}" CommandParameter="Date" />
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                    <Label Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Date"  >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TapCommand}" CommandParameter="Date" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Column="1" BackgroundColor="{DynamicResource PayCode}" Margin="-10,0,0,0">
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TapCommand}" CommandParameter="PayCode"/>
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                    <Label Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Pay Code" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TapCommand}" CommandParameter="PayCode" />
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    <BoxView Grid.Column="2" BackgroundColor="{DynamicResource TrackCode}" Margin="-10,0,0,0">
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TapCommand}" CommandParameter="TrackCode"/>
+                        </BoxView.GestureRecognizers>
+                    </BoxView>
+                    <Label Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Track Code"  >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding TapCommand}" CommandParameter="TrackCode" />
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                  
+                    <ListView ItemsSource="{Binding TimesheetsEntries,Mode=TwoWay}"  SelectedItem="{Binding SelectedTimesheet,Mode=TwoWay}" HasUnevenRows="True"  Grid.Row="1" Grid.ColumnSpan="3" IsVisible="{Binding IsVisibleDate}" x:Name="lst">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    
+                                    <Grid  Padding="5" Margin="0,0,0,0">
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition Height="20"  />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="20" />
+                                            
+                                        </Grid.RowDefinitions>
+
+                                        <BoxView Grid.Row="0" BackgroundColor="#19baea" HorizontalOptions="FillAndExpand"   />
+
+                                        <Label Grid.Row="0"    TextColor="Black" Text="{Binding TimesheetEntryDate,Converter={StaticResource DateFormatConverter}}" HorizontalOptions="Start" VerticalTextAlignment="Center" IsVisible="{Binding Path= BindingContext.IsDate,Source={x:Reference objectDetail}}"/>
+
+                                        <Label Grid.Row="0"    TextColor="Black" Text="{Binding PayCodeName}" HorizontalOptions="Start" VerticalTextAlignment="Center" IsVisible="{Binding  Path=BindingContext.IsPayCode,Source={x:Reference objectDetail}"/>
+
+                                        <Label Grid.Row="0"    TextColor="Black" Text="{Binding TrackCodeName}" HorizontalOptions="Start" VerticalTextAlignment="Center" IsVisible="{Binding  Path=BindingContext.IsTrackCode,Source={x:Reference objectDetail}"/>
+
+
+                                        <Label Grid.Row="0" TextColor="Black"  Text="{Binding TimesheetUnitsName}" HorizontalOptions="End"  VerticalTextAlignment="Center"  />
+
+
+
+                                        <Label Grid.Row="1"  Text="Track Code " HorizontalOptions="Start" IsVisible="{Binding Path= BindingContext.IsTrackCodelbl,Source={x:Reference objectDetail}}"  FontAttributes="Bold" />
+                                        
+                                        <Label Grid.Row="2"  TextColor="Black" Text="{Binding TrackCodeName}" HorizontalOptions="Start" IsVisible="{Binding Path= BindingContext.IsTrackCodelbl,Source={x:Reference objectDetail}}"  />
+
+                                        <Label Grid.Row="3" Text="Pay Code" HorizontalOptions="Start" IsVisible="{Binding Path= BindingContext.IsPayCodelbl,Source={x:Reference objectDetail}}" FontAttributes="Bold"/>
+
+                                        <Label Grid.Row="4"  TextColor="Black" Text="{Binding PayCodeName}" HorizontalOptions="Start"  IsVisible="{Binding Path= BindingContext.IsPayCodelbl,Source={x:Reference objectDetail}}" />
+
+                                        <Label Grid.Row="1" Text="Date" HorizontalOptions="Start" IsVisible="{Binding Path= BindingContext.IsDatelbl,Source={x:Reference objectDetail}}" FontAttributes="Bold"/>
+
+                                        <Label Grid.Row="2"  TextColor="Black" Text="{Binding TimesheetEntryDate,Converter={StaticResource DateFormatConverter}}"  HorizontalOptions="Start"  IsVisible="{Binding Path= BindingContext.IsDatelbl,Source={x:Reference objectDetail}}" />
+
+
+                                        <Label Grid.Row="5"  Text="Units " HorizontalOptions="Start" FontAttributes="Bold"  />
+                                        <Label Grid.Row="6"  TextColor="Black" Text="{Binding Units}" HorizontalOptions="Start"   />
+
+
+                                    </Grid>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1" Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" HorizontalOptions="FillAndExpand" Text="Save" BackgroundColor="#d25903" TextColor="White" />
+            <Button Grid.Column="1" HorizontalOptions="FillAndExpand" Text="Submit" BackgroundColor="#01446b" TextColor="White">
+                <Button.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" Android="-10,0,0,0" iOS="-5,0,0,0" />
+                </Button.Margin>
+            </Button>
+        </Grid>
+    </Grid>
+
+
+</ContentPage>

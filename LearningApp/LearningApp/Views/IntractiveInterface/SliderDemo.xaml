@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LearningApp.Extension"
+             x:Class="LearningApp.Views.IntractiveInterface.SliderDemo">
+    <StackLayout Padding="20">
+        <Frame OutlineColor="Accent">
+            <StackLayout>
+                <Label Text="Basic Slider" FontAttributes="Bold" FontSize="Large" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <Slider ValueChanged="Slider_ValueChanged" x:Name="slider">
+
+                    </Slider>
+                    <Label Grid.Column="1" x:Name="slidervalue" FontSize="Small"/>
+                </Grid>
+                <Label Text="Native Slider" FontAttributes="Bold" FontSize="Large" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomeSlider  ValueChanged="CustomeSlider_ValueChanged"/>
+                    <Label Grid.Column="1" x:Name="nativeslidervalue" FontSize="Small"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

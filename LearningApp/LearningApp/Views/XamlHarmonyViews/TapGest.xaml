@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.XamlHarmonyViews.TapGest">
+    <StackLayout Orientation="Horizontal" x:Name="MainSt">
+        <Label Text="Tap gestures">
+            <Label.FontSize>
+                <OnPlatform x:TypeArguments="x:Double"
+                      iOS="20"
+                      Android="22" />
+            </Label.FontSize>
+        </Label>
+
+        <BoxView  Color="Blue" HeightRequest="50" WidthRequest="50">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+    </StackLayout>
+</ContentPage>

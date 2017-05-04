@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:LearningApp.Extension;assembly=LearningApp"
+             x:Class="LearningApp.Views.BindableProp" Title="Bindable Property">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="5, 20, 0, 0" Android="5, 0, 0, 0" WinPhone="5, 0, 0, 0" />
+    </ContentPage.Padding>
+    <StackLayout x:Name="stackLayout">
+        <Frame>
+            <Label Text="Point Size Binadable" TextColor="Lime" FontAttributes="Bold" />
+        </Frame>
+        <toolkit:AltLabel Text="Text of 4 points" PointSize="4" />
+        <toolkit:AltLabel Text="Text of 5 points" PointSize="5" />
+        <toolkit:AltLabel Text="Text of 6 points" PointSize="6" />
+        <toolkit:AltLabel Text="Text of 7 points" PointSize="7" />
+        <toolkit:AltLabel Text="Text of 8 points" PointSize="8" />
+        <toolkit:AltLabel Text="Text of 9 points" PointSize="9" />
+        <toolkit:AltLabel Text="Text of 10 points" PointSize="10" />
+        <toolkit:AltLabel Text="Text of 11 points" PointSize="11" />
+        <toolkit:AltLabel Text="Text of 12 points" PointSize="12" />
+        <Frame>
+            <Label Text="WordCount" TextColor="Purple" FontAttributes="Bold" />
+        </Frame>
+        <toolkit:CountedLabel x:Name="countedLabel" VerticalOptions="CenterAndExpand" Text= 
+                                  "Mr. Sherlock Holmes, who was usually very late in the mornings,
+                                  save upon those not infrequent occasions when he was up all night,
+                                  was seated at the breakfast table. I stood upon the hearth-rug and picked up the stick which our visitor had left behind him the night before. It was a fine, thick piece of wood, bulbous-headed, of the sort which is known as a &#x201C;Penang lawyer.&#x201D; Just under the head was a broad silver band, nearly an inch across, &#x201C;To James Mortimer, M.R.C.S., from his friends of the C.C.H.,&#x201D; was engraved upon it, with the date &#x201C;1884.&#x201D; It was just such a stick as the old-fashioned family practitioner used to carry&#x2014;dignified, solid, and reassuring."  />
+        <Label x:Name="wordCountLabel" Text="???" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

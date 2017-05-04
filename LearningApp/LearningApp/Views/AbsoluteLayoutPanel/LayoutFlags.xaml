@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.AbsoluteLayoutPanel.LayoutFlags">
+    <AbsoluteLayout BackgroundColor="Yellow">
+        <BoxView
+    Color="Red"
+           
+    AbsoluteLayout.LayoutBounds="1.0, 1.0, 0.5, 0.5"
+    AbsoluteLayout.LayoutFlags="All" />
+
+        <BoxView
+    Color="Green"
+    WidthRequest="50"
+    HeightRequest="50"
+    AbsoluteLayout.LayoutBounds="0.1, 0.1, AutoSize, AutoSize"
+    AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <BoxView
+    Color="Blue"
+    AbsoluteLayout.LayoutBounds="0.25, 0.25, 0.5, 0.5"
+    AbsoluteLayout.LayoutFlags="All" />
+    </AbsoluteLayout>
+</ContentPage>

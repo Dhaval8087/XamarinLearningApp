@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="buttoncolor">Black</Color>
+            <Style TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <!--<Setter Property="BorderColor" Value="Lime" />-->
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="WidthRequest" Value="200" />
+                <!--<Setter Property="TextColor" Value="{StaticResource buttoncolor}" />-->
+            </Style>
+            <Color x:Key="DateColor">#3c9ece</Color>
+            <Color x:Key="PayCode">#c1eaf6</Color>
+            <Color x:Key="TrackCode">#c1eaf6</Color>
+           
+           
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>

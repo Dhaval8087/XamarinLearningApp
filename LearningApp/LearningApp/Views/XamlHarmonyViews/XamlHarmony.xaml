@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningApp.Views.XamlHarmonyViews.XamlHarmony" Title="Xaml Harmony">
+    <StackLayout Orientation="Vertical" x:Name="MainSt">
+
+        <Frame OutlineColor="Accent">
+            <Label Text="Xaml Harmony Demo!" 
+           VerticalOptions="Center" 
+           TextColor="Maroon"
+           HorizontalOptions="Center" FontSize="Large" />
+        </Frame>
+        <Frame OutlineColor="Accent">
+            <StackLayout Spacing="30" Padding="10" BackgroundColor="#fffff0">
+                <Button Text="PassingArguments" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand"   Command="{Binding XamlHarmonyCommand}" CommandParameter="PassingArguments"/>
+               
+                <Button Text="TapGesture Recognizer" FontSize="Medium" HeightRequest="60" HorizontalOptions="FillAndExpand" Command="{Binding XamlHarmonyCommand}" CommandParameter="TapGest" />
+            </StackLayout>
+            
+        </Frame>
+    </StackLayout>
+</ContentPage>
